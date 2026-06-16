@@ -419,60 +419,79 @@ nav.scrolled {
 
 /* Skills Section */
 .skills-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .skill-category {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.8rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    margin-bottom: 2rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skill-category:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.skill-cat-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.3rem;
+}
+
+.skill-cat-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 1.05rem;
 }
 
 .skill-category h3 {
     color: #ffffff;
-    margin-bottom: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 1rem;
-    text-align: center;
+    letter-spacing: -0.2px;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    gap: 0.5rem;
 }
 
 .skill-tag {
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.9);
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
 }
 
@@ -897,53 +916,105 @@ footer {
 <section id="skills" class="section">
 <h2>My Skills</h2>
 <div class="skills-container">
+
 <div class="skill-category">
-<h3>Programming Languages</h3>
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
+<h3>AI / ML</h3>
+</div>
 <div class="skill-tags">
-<div class="skill-tag">C/C++</div>
-<div class="skill-tag">Java</div>
 <div class="skill-tag">Python</div>
-<div class="skill-tag">JavaScript</div>
+<div class="skill-tag">Scikit-learn</div>
+<div class="skill-tag">TensorFlow</div>
+<div class="skill-tag">Keras</div>
+<div class="skill-tag">CNN</div>
+<div class="skill-tag">RNN</div>
+<div class="skill-tag">LSTM</div>
+<div class="skill-tag">Transformers</div>
+<div class="skill-tag">NLP</div>
+<div class="skill-tag">LLMs</div>
+<div class="skill-tag">Prompt Engineering</div>
+<div class="skill-tag">Random Forest</div>
+<div class="skill-tag">K-means</div>
+<div class="skill-tag">PCA</div>
+</div>
+</div>
+
+<div class="skill-category">
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-chart-pie"></i></div>
+<h3>Data &amp; Vector</h3>
+</div>
+<div class="skill-tags">
+<div class="skill-tag">Pandas</div>
+<div class="skill-tag">NumPy</div>
+<div class="skill-tag">Matplotlib</div>
+<div class="skill-tag">Vector Databases</div>
+<div class="skill-tag">Agentic AI</div>
+</div>
+</div>
+
+<div class="skill-category">
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-server"></i></div>
+<h3>Backend / APIs</h3>
+</div>
+<div class="skill-tags">
+<div class="skill-tag">FastAPI</div>
+<div class="skill-tag">REST APIs</div>
+<div class="skill-tag">SQLAlchemy</div>
+<div class="skill-tag">Celery</div>
+<div class="skill-tag">Redis</div>
+<div class="skill-tag">Docker</div>
+<div class="skill-tag">WebSocket</div>
 <div class="skill-tag">PHP</div>
 </div>
 </div>
 
 <div class="skill-category">
-<h3>Web Development</h3>
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+<h3>Databases</h3>
+</div>
 <div class="skill-tags">
-<div class="skill-tag">HTML5</div>
-<div class="skill-tag">CSS3</div>
-<div class="skill-tag">Bootstrap</div>
 <div class="skill-tag">MySQL</div>
+<div class="skill-tag">Oracle</div>
+<div class="skill-tag">Supabase</div>
+<div class="skill-tag">SQL</div>
 </div>
 </div>
 
 <div class="skill-category">
-<h3>Tools & Concepts</h3>
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-cloud"></i></div>
+<h3>Tools &amp; Cloud</h3>
+</div>
 <div class="skill-tags">
+<div class="skill-tag">AWS</div>
 <div class="skill-tag">Git</div>
 <div class="skill-tag">GitHub</div>
-<div class="skill-tag">VS Code</div>
-<div class="skill-tag">XAMPP</div>
-<div class="skill-tag">Linux Basics</div>
-<div class="skill-tag">Firebase</div>
-<div class="skill-tag">Netlify</div>
-<div class="skill-tag">Data Structures</div>
-<div class="skill-tag">Algorithms</div>
-<div class="skill-tag">OOP</div>
-<div class="skill-tag">Machine Learning</div>
+<div class="skill-tag">Jupyter Notebook</div>
+<div class="skill-tag">Google Colab</div>
+<div class="skill-tag">Cloudflare Pages</div>
 </div>
 </div>
 
 <div class="skill-category">
-<h3>Soft Skills</h3>
+<div class="skill-cat-head">
+<div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+<h3>Languages</h3>
+</div>
 <div class="skill-tags">
-<div class="skill-tag">Fast Learning</div>
-<div class="skill-tag">Technical Explanation</div>
-<div class="skill-tag">Task Management</div>
-<div class="skill-tag">Problem Solving</div>
+<div class="skill-tag">C</div>
+<div class="skill-tag">C++</div>
+<div class="skill-tag">Java</div>
+<div class="skill-tag">Python</div>
+<div class="skill-tag">HTML5</div>
+<div class="skill-tag">JavaScript</div>
+<div class="skill-tag">SQL</div>
 </div>
 </div>
+
 </div>
 </section>
 
