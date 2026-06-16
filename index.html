@@ -92,11 +92,11 @@ body {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
-    /* dark transparent overlay so text stays readable, keeping the "transparent black" feel */
+    /* lighter transparent overlay so the video is brighter/more visible, keeping text readable */
     background:
-        linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(10, 10, 10, 0.88) 50%, rgba(0, 0, 0, 0.92) 100%);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+        linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(8, 8, 8, 0.62) 50%, rgba(0, 0, 0, 0.70) 100%);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
 }
 
 /* Navigation */
@@ -220,17 +220,35 @@ nav.scrolled {
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin: 0 auto 2rem;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    margin: 0 auto 2.5rem;
+    position: relative;
+    /* transparent glassy ring so the video shows through around the photo */
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.04),
+        0 0 40px rgba(255, 255, 255, 0.18),
+        0 12px 50px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     background: transparent;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     opacity: 0; /* Initially hidden for animation */
     animation: fadeInUp 1s ease forwards;
     animation-delay: 0.4s; /* Delay for profile photo */
+}
+
+/* subtle frosted glow ring behind the photo */
+.profile-photo::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .profile-photo img {
@@ -238,6 +256,14 @@ nav.scrolled {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    /* slight transparency so the photo blends into the transparent theme */
+    opacity: 0.92;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.profile-photo:hover img {
+    opacity: 1;
+    transform: scale(1.04);
 }
 
 .typewriter {
@@ -845,8 +871,8 @@ footer {
     }
 
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
     }
 }
 
