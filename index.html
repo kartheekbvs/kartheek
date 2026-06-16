@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kartheek BVS - Portfolio</title>
+<title>Bhamidipati Venkata Sai Kartheek - Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style type="text/css">
  
@@ -516,6 +516,51 @@ nav.scrolled {
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
     font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.project-tech span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Education Section */
@@ -775,8 +820,8 @@ footer {
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="http://twss.netlify.app/projects.html">Projects</a></li>
- <li><a href="http://twss.netlify.app/certificates.html">Certificates</a></li>
+<li><a href="#projects">Projects</a></li>
+ <li><a href="certificates.html">Certificates</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -795,7 +840,7 @@ footer {
 <div class="profile-photo">
     <img src="http://twss.netlify.app/20260125_015816.jpg" alt="Kartheek BVS">
 </div>
-<h1>Hi, I'm Kartheek BVS</h1>
+<h1>Hi, I'm Bhamidipati Venkata Sai Kartheek</h1>
 <p class="typewriter"></p>
 <div class="social-links">
 <a href="https://www.linkedin.com/in/kartheek-bvs-2a82562b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -811,8 +856,7 @@ footer {
   <div class="modal-content">
     <span class="close-btn" onclick="closeResume()">&times;</span>
     <iframe src="" id="resumeFrame"></iframe>
-    <a href="http://twss.netlify.app/BHAMIDIPATI VENKTA SAI KARTHEEK.pdf
-" download class="download-btn">Download PDF</a>
+    <a href="Bhamidipati_Venkata_Sai_Kartheek.pdf" download class="download-btn">Download PDF</a>
   </div>
 </div>
 </div>
@@ -904,7 +948,65 @@ footer {
 </section>
 
 <!-- Projects Section -->
+<section id="projects" class="section">
+<h2>Projects</h2>
+<div class="projects-grid">
 
+<div class="project-card">
+<div class="project-info">
+<h3>OpenBenchML – ML Benchmarking Platform</h3>
+<p class="project-desc">An open-source platform where developers upload ML models and compare accuracy, speed, and size on a public leaderboard. Supports scikit-learn, PyTorch, ONNX, TensorFlow, XGBoost, and LightGBM with a Docker sandbox for secure execution and async task processing via Celery + Redis.</p>
+<div class="project-tech">
+<span>FastAPI</span><span>Docker</span><span>Redis</span><span>Celery</span><span>JWT</span><span>WebSocket</span>
+</div>
+<div class="project-links">
+<a href="https://github.com/kartheekbvs/openbenchml" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+</div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-info">
+<h3>Handwritten Digit Recognition</h3>
+<p class="project-desc">A CNN model built with convolution, ReLU activations, and max pooling to recognize digits (0–9) from 28×28 grayscale images. Trained on MNIST with 98%+ validation accuracy and served via a FastAPI REST endpoint for real-time predictions.</p>
+<div class="project-tech">
+<span>Python</span><span>CNN</span><span>TensorFlow</span><span>FastAPI</span>
+</div>
+<div class="project-links">
+<a href="https://digitsense-ai.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+</div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-info">
+<h3>TWSS Learning Platform</h3>
+<p class="project-desc">A full-stack learning site covering 10+ topics with a FastAPI backend handling login, content delivery, and user progress. Deployed on Cloudflare Pages with Supabase as the database, fully mobile-responsive with 99.9% uptime.</p>
+<div class="project-tech">
+<span>HTML</span><span>CSS</span><span>JavaScript</span><span>FastAPI</span><span>Supabase</span>
+</div>
+<div class="project-links">
+<a href="http://twss.shop" target="_blank"><i class="fas fa-external-link-alt"></i> Live Site</a>
+<a href="https://github.com/kartheekbvs/TWSS" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+</div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-info">
+<h3>Spam Mail Detection</h3>
+<p class="project-desc">A logistic regression model trained on 10,000+ emails to detect spam with 94% accuracy using TF-IDF features. Includes a full NLP pipeline (tokenization, stopword removal, vectorization) and is served via a FastAPI REST endpoint for live email classification.</p>
+<div class="project-tech">
+<span>Python</span><span>Scikit-learn</span><span>NLTK</span><span>FastAPI</span>
+</div>
+<div class="project-links">
+<a href="https://github.com/kartheekbvs" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+</div>
+</div>
+</div>
+
+</div>
+</section>
 
 <!-- Education Section -->
 <section id="education" class="section">
@@ -966,7 +1068,7 @@ footer {
 
 <!-- Footer -->
 <footer>
-<p>&copy; 2025 Kartheek BVS. All rights reserved.</p>
+<p>&copy; 2025 Bhamidipati Venkata Sai Kartheek. All rights reserved.</p>
 </footer>
 
 <script>
@@ -1121,7 +1223,7 @@ window.addEventListener('DOMContentLoaded', function() {
 </script>
      <script>
   function showResume() {
-  document.getElementById('resumeFrame').src = '/Bhamidipati_Venkata_Sai_Kartheek (4).pdf'; // replace with correct path
+  document.getElementById('resumeFrame').src = 'Bhamidipati_Venkata_Sai_Kartheek.pdf'; // resume PDF uploaded to repo
   document.getElementById('resumeModal').style.display = 'block';
 }
 
