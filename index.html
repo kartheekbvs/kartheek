@@ -339,6 +339,7 @@ nav.scrolled {
 .section {
     padding: 6rem 2rem;
     position: relative;
+    scroll-margin-top: 90px; /* anchor links land below the fixed navbar */
 }
 
 .section::before {
@@ -348,12 +349,12 @@ nav.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(1px);
+    /* fully transparent so the video background plays through crisply */
+    background: transparent;
 }
 
 .section:nth-child(even)::before {
-    background: rgba(0, 0, 0, 0.05);
+    background: transparent;
 }
 
 .section-content {
@@ -1285,6 +1286,30 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('scrolled');
     }
 });
+
+// Force the background video to play (handles browsers that block autoplay)
+(function() {
+    const video = document.querySelector('.bg-video');
+    if (!video) return;
+    const tryPlay = () => {
+        const p = video.play();
+        if (p && typeof p.catch === 'function') {
+            p.catch(() => {
+                // retry once the user interacts with the page
+                const retry = () => { video.play().catch(()=>{}); };
+                document.addEventListener('click', retry, { once: true });
+                document.addEventListener('touchstart', retry, { once: true });
+                document.addEventListener('keydown', retry, { once: true });
+            });
+        }
+    };
+    if (video.readyState >= 2) tryPlay();
+    else video.addEventListener('loadeddata', tryPlay);
+    // resume if a tab regains focus or returns to visibility
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) video.play().catch(()=>{});
+    });
+})();
 
 </script>
 <script>
