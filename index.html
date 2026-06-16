@@ -69,9 +69,34 @@ html {
 body {
     line-height: 1.6;
     color: #ffffff;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: #080808;
     background-attachment: fixed;
     min-height: 100vh;
+}
+
+/* Video Background (fixed, behind everything — like twss.shop/courses.html) */
+.bg-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    /* dark transparent overlay so text stays readable, keeping the "transparent black" feel */
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(10, 10, 10, 0.88) 50%, rgba(0, 0, 0, 0.92) 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 /* Navigation */
@@ -828,6 +853,12 @@ footer {
 </style>
 </head>
 <body>
+<!-- Video Background (fixed, behind everything) -->
+<video class="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="remove_the_first_sec_and_no.mp4" type="video/mp4">
+</video>
+<div class="bg-overlay"></div>
+
 <!-- Navigation -->
 <nav>
 <div class="nav-content">
